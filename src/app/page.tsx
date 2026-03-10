@@ -88,7 +88,28 @@ export default function Home() {
     },
   ];
 
-  const carriers = ["Aetna", "Aflac", "AIG", "Transamerica", "Americo", "John Hancock", "Mutual of Omaha", "Foresters", "North American", "Global Atlantic", "F&G", "Symetra"];
+  const carriers = [
+    { src: "/carriers/1.png", alt: "Carrier 1" },
+    { src: "/carriers/2.png", alt: "Carrier 2" },
+    { src: "/carriers/3.png", alt: "Carrier 3" },
+    { src: "/carriers/4.png", alt: "Carrier 4" },
+    { src: "/carriers/5.png", alt: "Carrier 5" },
+    { src: "/carriers/12.png", alt: "Carrier 12" },
+    { src: "/carriers/images.png", alt: "Carrier" },
+    { src: "/carriers/images_20(1).png", alt: "Carrier" },
+    { src: "/carriers/images_20(2).png", alt: "Carrier" },
+    { src: "/carriers/images_20(3).png", alt: "Carrier" },
+    { src: "/carriers/images_20(4).png", alt: "Carrier" },
+    { src: "/carriers/images_20(5).png", alt: "Carrier" },
+    { src: "/carriers/images_20(6).png", alt: "Carrier" },
+    { src: "/carriers/unitedhome.png", alt: "United Home" },
+    { src: "/carriers/lincoln-financial-group-logo-black-and-white.png", alt: "Lincoln Financial" },
+    { src: "/carriers/NATIONAL-LIFE-LSW (1).png", alt: "National Life" },
+    { src: "/carriers/american-national7345.webp", alt: "American National" },
+    { src: "/carriers/American_Amicable_logo_recreated_BLACK_19-07-09-1_2x.webp", alt: "American Amicable" },
+    { src: "/carriers/Screen_2BShot_2B2024-01-19_2Bat_2B9_51_21_2BAM (1).png", alt: "Carrier" },
+    { src: "/carriers/04438aa18245c3fcb1a6a93b1976da66.jpeg", alt: "Carrier" },
+  ];
 
   return (
     <div style={{ minHeight: "100vh", background: "white", fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", overflowX: "hidden" }}>
@@ -329,12 +350,15 @@ export default function Home() {
             </p>
           </div>
           {/* Carrier logo grid */}
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px", marginBottom: "48px" }}>
-            {carriers.map((name) => (
-              <div key={name} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "12px", padding: "16px 28px", fontSize: "15px", fontWeight: 700, color: "#3d5166", boxShadow: "0 2px 12px rgba(13,95,132,0.06)", transition: "all 0.25s", cursor: "default" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.color = PRIMARY; (e.currentTarget as HTMLElement).style.boxShadow = `0 6px 20px ${PRIMARY}22`; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; (e.currentTarget as HTMLElement).style.color = "#3d5166"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(13,95,132,0.06)"; }}>
-                {name}
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "18px", marginBottom: "48px" }}>
+            {carriers.map((carrier, i) => (
+              <div key={i} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "14px", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "center", minWidth: "140px", height: "80px", boxShadow: "0 2px 12px rgba(13,95,132,0.06)", transition: "all 0.25s", cursor: "default" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.boxShadow = `0 6px 24px ${PRIMARY}22`; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(13,95,132,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={carrier.src} alt={carrier.alt} style={{ maxWidth: "110px", maxHeight: "48px", width: "auto", height: "auto", objectFit: "contain", filter: "grayscale(100%)", transition: "filter 0.25s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0%)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(100%)"; }} />
               </div>
             ))}
           </div>
