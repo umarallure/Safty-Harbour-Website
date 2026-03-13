@@ -9,7 +9,6 @@ const DARK = "#0a2035";
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openToggle, setOpenToggle] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -18,50 +17,31 @@ export default function Home() {
   }, []);
 
   const stats = [
-    { value: "$800", sub: "Million+", label: "Annual Premiums Managed", icon: "/icon-document.svg" },
-    { value: "80,000+", sub: "and Growing", label: "Licensed Agents", icon: "/icon-agent.svg" },
-    { value: "135+", sub: "Across All 50 States", label: "Regional Offices", icon: "/icon-location.svg" },
+    { value: "$150 Billion+", label: "Life Insurance Coverage Placed", icon: "/icon-document.svg" },
+    { value: "1,000,000+", label: "Families Protected Nationwide", icon: "/icon-agent.svg" },
+    { value: "$800 Million+", label: "Annual Premiums Managed", icon: "/icon-location.svg" },
   ];
 
-  const advantages = [
+  const coreValues = [
     {
       num: "01",
-      title: "Free Life Insurance Sales Training",
-      short: "Safety Harbour Insurance offers free training to all the independent contractor insurance agents that we work with.",
-      body: "Comprehensive life insurance sales training provides those who sell life insurance with the tools to remain at the forefront of their industry. We offer free life insurance sales training year-round so that those eager to become an independent contractor insurance agent can receive accessible, in-depth insights. Removing barriers to entry for learning how to become an independent life insurance agent helps contribute to a more accessible insurance landscape.",
+      title: "Elite Carrier Network",
+      body: "Safety Harbour Insurance partners only with the industry’s highest-rated carriers. We understand the weight of your family’s future, so we only work with providers who share our commitment to excellence.",
     },
     {
       num: "02",
-      title: "Life Insurance Leads",
-      short: "Backed by Integrity, Safety Harbour Insurance has been able to generate leads anywhere in the country.",
-      body: "Safety Harbour Insurance does not sell leads. Life Insurance lead options are available through the Integrity Lead Center, which connects independent contractor agents with a massive inventory of insurance lead vendors updated in real-time. Thanks to our partnership with Integrity, a leading Insurtech company, we have access to even more life insurance lead vendors and the list is constantly growing. There is no requirement to purchase leads to work with us.",
+      title: "Your Family, Our Mission",
+      body: "Our independent agents are driven by a passion for service. We treat your family like our own, ensuring your specific needs are met with compassion and precision.",
     },
     {
       num: "03",
-      title: "Competitive Compensation",
-      short: "Insurance agents earn money from commissions on policies sold—and we have some of the top carrier contract rates in the industry.",
-      body: "At Safety Harbour Insurance, we believe independent contractor insurance agents should benefit the most from the life insurance sales they make, along with the families they service. We incentivize success by working with carriers to develop some of the top carrier contract rates in the industry!",
+      title: "Coast-to-Coast Support",
+      body: "We are proud to serve families across all 50 states. No matter where you call home, a Safety Harbour Insurance agent is nearby to provide personalized, local expertise.",
     },
     {
       num: "04",
-      title: "Various Sales Programs",
-      short: "In-person, telesales, and virtual sales—Safety Harbour Insurance provides free training for all three so you can excel your way.",
-      body: "Within the past few years, there has been a boom in remote work across industries with insurance standing as no exception. Although in-person life insurance sales have always been the best way to help families, Safety Harbour Insurance also recognizes that excelling in virtual sales and telephone sales is important to being a dynamic and successful insurance agent. Accordingly, independent contractor insurance agents can use the mode of sales they are most comfortable with.",
-    },
-  ];
-
-  const truthItems = [
-    {
-      label: "CONTRACT",
-      content: "If you have worked in this industry before, you may have a particular idea in mind about what independent agent contracts might include. But here independent contractor insurance agents that work with Safety Harbour Insurance sign contracts with insurance carriers. If an independent agent uses the tools and resources offered by us, such as those provided in the Customer Relationship Management (\"CRM\") platform, then the agent may be required to sign an agreement promising to follow our terms and conditions.",
-    },
-    {
-      label: "BONUS",
-      content: "We offer performance related bonuses to qualifying agents based on agency-level and/or personal production numbers. We then distribute over $300,000 in personal production bonuses and $3,000,000 in agency production bonuses each month to qualifying agents. While we strive to provide all agents the tools they need to become successful, not every agent should expect to earn a bonus.",
-    },
-    {
-      label: "RENEWALS",
-      content: "At Safety Harbour Insurance, you are vested 100% on day 1.",
+      title: "Tailored Solutions",
+      body: "Safety Harbour Insurance is more than just a marketing organization. We are your advocates, matching you with the specific carrier and plan that fits your unique life situation perfectly.",
     },
   ];
 
@@ -74,7 +54,7 @@ export default function Home() {
     {
       title: "Final Expense",
       desc: "Remove the financial burden of end-of-life costs. Our Final Expense plans are locked-in for life—your rates will never increase and your coverage will never expire.",
-      icon: "🛡️",
+      icon: "🕊️",
     },
     {
       title: "Indexed Universal Life (IUL)",
@@ -86,6 +66,41 @@ export default function Home() {
       desc: "Secure a reliable retirement income. FIAs provide market-linked growth without the risk of principal loss, ensuring your hard-earned savings are protected from market volatility.",
       icon: "💰",
     },
+  ];
+
+  const testimonials = [
+    {
+      name: "Marcus Thorne",
+      quote: "Choosing Safety Harbour Insurance was the best decision I’ve made for my family’s future. I wanted to ensure my children wouldn't be burdened with unexpected costs later on, and the team helped me craft a final expense plan that was both budget-friendly and thorough. They took the time to explain the 'why' behind every recommendation. I finally feel like my Safety Harbour is secure.",
+      stars: "★★★★★"
+    },
+    {
+      name: "Elena Rodriguez",
+      quote: "The team at Safety Harbour Insurance is exceptional. I was looking for mortgage protection and didn't know where to start. They treated me like a person, not a policy number, and walked me through the coverage that ensures my family stays in our home no matter what happens. It’s rare to find agents this dedicated and accessible.",
+      stars: "★★★★★"
+    },
+    {
+      name: "David Chen",
+      quote: "I can’t recommend Safety Harbour Insurance enough. There were no high-pressure sales tactics—just honest, clear advice. They helped me find a policy that fits my fixed income perfectly. The peace of mind I have now is priceless.",
+      stars: "★★★★★"
+    },
+    {
+      name: "Sarah Jenkins",
+      quote: "Working with Safety Harbour Insurance was a breath of fresh air. They stripped away all the confusing insurance jargon and made everything easy to understand. I now have a policy I actually trust, and I know my family is on solid ground. They truly are the team to turn to for straightforward, honest service.",
+      stars: "★★★★★"
+    },
+    {
+      name: "Gregory Banks",
+      quote: "From the first phone call, I knew Safety Harbour Insurance was different. They didn't just sell me a policy; they listened to my concerns about my family’s long-term growth and helped me set up a plan that protects us today and builds for tomorrow. It’s a relief to work with professionals who prioritize my family’s goals.",
+      stars: "★★★★★"
+    }
+  ];
+
+  const articles = [
+    "Why Final Expense Insurance is a Smart Choice at Any Age.",
+    "Protecting Your Home: A Guide to Mortgage Insurance.",
+    "Understanding the Benefits of Indexed Universal Life.",
+    "The Application Process: What to Expect When Securing Coverage.",
   ];
 
   const carriers = [
@@ -112,7 +127,7 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "white", fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: "white", fontFamily: "'Galano Grotesque', sans-serif", overflowX: "hidden" }}>
 
       {/* ─── 1. HEADER ─────────────────────────────────────────── */}
       <nav style={{
@@ -152,235 +167,120 @@ export default function Home() {
       {/* ─── 2. HERO ───────────────────────────────────────────── */}
       <section style={{
         minHeight: "100vh", position: "relative", display: "flex", flexDirection: "column",
-        alignItems: "center", justifyContent: "center", overflow: "visible", paddingTop: "100px",
+        alignItems: "center", justifyContent: "center", overflow: "visible", paddingTop: "140px",
         backgroundImage: "url('/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "60px 48px 12px", width: "100%", position: "relative", zIndex: 2 }}>
-          <h1 style={{ fontSize: "clamp(44px, 6vw, 80px)", fontWeight: 900, color: DARK, lineHeight: 1.06, marginBottom: "20px", letterSpacing: "-0.03em" }}>
-            Get an Insurance <span style={{ color: PRIMARY }}>Quote</span>
+        {/* Fade Out Gradient for smooth transition */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "180px", background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)", zIndex: 1 }} />
+        
+        <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "40px 48px 12px", width: "100%", position: "relative", zIndex: 2, textAlign: "center" }}>
+          <h1 style={{ fontSize: "clamp(44px, 6vw, 84px)", fontWeight: 900, color: DARK, lineHeight: 1.06, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "-0.02em" }}>
+            SAFETY HARBOUR <span style={{ color: PRIMARY }}>INSURANCE</span>
           </h1>
-          <p style={{ color: "#3d5166", fontSize: "clamp(15px, 1.4vw, 18px)", lineHeight: 1.75, maxWidth: "640px", marginBottom: "16px" }}>
-            It takes <strong style={{ color: DARK }}>60 seconds</strong> to fill out our form. A Safety Harbour Insurance representative will get back to you within <strong style={{ color: DARK }}>1 business day</strong> with your personalized insurance quote!
+          <p style={{ color: "#3d5166", fontSize: "clamp(18px, 1.8vw, 22px)", lineHeight: 1.6, maxWidth: "680px", margin: "0 auto 36px", fontWeight: 500 }}>
+            Securing Your Future, Protecting Your Safety Harbour.
           </p>
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", marginBottom: "40px" }}>
+             <a href="#quote" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "18px 42px", borderRadius: "50px", fontSize: "16px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 14px 36px ${ACCENT}66`; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px ${ACCENT}44`; }}>
+              Get A Quote Now
+            </a>
+            <a href="#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "white", color: DARK, border: `2px solid #e2ecf4`, padding: "18px 42px", borderRadius: "50px", fontSize: "16px", fontWeight: 700, textDecoration: "none", transition: "all 0.3s" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.color = PRIMARY; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#e2ecf4"; (e.currentTarget as HTMLElement).style.color = DARK; }}>
+              Contact Us
+            </a>
+          </div>
         </div>
 
         {/* Stat cards — overflow bottom */}
-        <div style={{ width: "100%", maxWidth: "1100px", margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px", position: "relative", zIndex: 10, transform: "translateY(20%)" }}>
+        <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "24px", position: "relative", zIndex: 10, marginTop: "40px", marginBottom: "40px" }}>
           {stats.map((stat, i) => (
             <div key={i} style={{ background: "white", padding: "36px 28px 28px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", borderRadius: "16px", boxShadow: "0 8px 40px rgba(13,95,132,0.13)", transition: "all 0.3s", cursor: "default" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 50px rgba(13,95,132,0.2)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 40px rgba(13,95,132,0.13)"; }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={stat.icon} alt={stat.label} style={{ width: "52px", height: "52px", objectFit: "contain", marginBottom: "16px", filter: "invert(29%) sepia(60%) saturate(600%) hue-rotate(167deg) brightness(75%) contrast(110%)" }} />
-              <div style={{ fontSize: "clamp(32px,3.5vw,46px)", fontWeight: 900, color: PRIMARY, lineHeight: 1 }}>{stat.value}</div>
-              <div style={{ fontSize: "15px", color: "#6b8fa6", marginTop: "6px", fontWeight: 500 }}>{stat.sub}</div>
+              <div style={{ fontSize: "clamp(28px,3vw,38px)", fontWeight: 900, color: PRIMARY, lineHeight: 1 }}>{stat.value}</div>
               <div style={{ width: "48px", height: "2px", background: "#e2ecf4", margin: "18px auto" }} />
-              <div style={{ fontSize: "14px", fontWeight: 700, color: PRIMARY }}>{stat.label}</div>
+              <div style={{ fontSize: "15px", fontWeight: 700, color: "#6b8fa6" }}>{stat.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ─── 3. VALUE PROPOSITION ──────────────────────────────── */}
-      <section style={{ background: "white", paddingTop: "180px", paddingBottom: "100px" }}>
+      {/* ─── 3. CORE VALUES SECTION ──────────────────────────────── */}
+      <section style={{ background: "white", paddingTop: "60px", paddingBottom: "100px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }}>
-          {/* Left — image placeholder (elderly couple from skeleton) */}
-          <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(13,95,132,0.15)" }}>
-            <div style={{ background: `linear-gradient(135deg, ${PRIMARY}22 0%, ${PRIMARY}44 100%)`, height: "440px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "20px" }}>
-              <div style={{ textAlign: "center" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/logo2.png" alt="Safety Harbour Insurance" style={{ height: "100px", opacity: 0.35 }} />
-              </div>
-            </div>
+          {/* Left — image */}
+          <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(13,95,132,0.15)", height: "100%", minHeight: "550px" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/core-value.jpeg" alt="Safety Harbour Insurance Core Value" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: 0, left: 0 }} />
             {/* Accent block */}
             <div style={{ position: "absolute", bottom: "-1px", left: 0, right: 0, background: `linear-gradient(to top, ${PRIMARY}ee, transparent)`, height: "120px" }} />
             <div style={{ position: "absolute", bottom: "28px", left: "28px", right: "28px", color: "white" }}>
-              <div style={{ fontSize: "22px", fontWeight: 800, lineHeight: 1.2 }}>Protecting Families<br />Across America</div>
+              <div style={{ fontSize: "22px", fontWeight: 800, lineHeight: 1.2 }}>Core Value</div>
             </div>
           </div>
 
           {/* Right — text */}
           <div>
-            <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>What Sets Us Apart</div>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, lineHeight: 1.15, marginBottom: "24px", letterSpacing: "-0.02em" }}>
-              Helping families is<br /><span style={{ color: PRIMARY }}>our #1 priority</span>
+            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, lineHeight: 1.15, marginBottom: "32px", letterSpacing: "-0.02em" }}>
+              Protecting your family is <span style={{ color: PRIMARY }}>our #1 priority.</span>
             </h2>
-            <p style={{ color: "#4a6070", fontSize: "16px", lineHeight: 1.8, marginBottom: "36px" }}>
-              Safety Harbour Insurance is set apart within the insurance industry by the unparalleled level of support we provide to our independent contractor agents. We partner with the nation's elite insurance carriers, allowing our agents to excel and families to receive the protection they deserve. With a presence in all 50 states and over 100 national offices, we see firsthand how quality insurance solutions transform lives. Whether you are looking to become an independent agent or want to start your own agency, your journey begins here with Safety Harbour Insurance.
-            </p>
-            <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "14px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 14px 36px ${ACCENT}66`; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px ${ACCENT}44`; }}>
-              Apply Now
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 4. SAFETY HARBOUR ADVANTAGE ───────────────────────── */}
-      <section style={{ background: "#f4f8fb", padding: "100px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>Programs & Training</div>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em" }}>
-              We provide the resources for your<br /><span style={{ color: PRIMARY }}>family's growth and success</span>
-            </h2>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "28px" }}>
-            {advantages.map((adv) => (
-              <div key={adv.num} style={{ background: "white", borderRadius: "18px", padding: "36px 32px", boxShadow: "0 4px 24px rgba(13,95,132,0.07)", border: `1px solid rgba(13,95,132,0.07)`, transition: "all 0.3s", position: "relative", overflow: "hidden" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(13,95,132,0.14)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(13,95,132,0.07)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
-                <div style={{ position: "absolute", top: "20px", right: "24px", fontSize: "56px", fontWeight: 900, color: `${PRIMARY}10`, lineHeight: 1 }}>{adv.num}</div>
-                <div style={{ fontSize: "13px", fontWeight: 800, color: PRIMARY, letterSpacing: "0.1em", marginBottom: "12px" }}>{adv.num}</div>
-                <h3 style={{ fontSize: "20px", fontWeight: 800, color: DARK, marginBottom: "12px", lineHeight: 1.25 }}>{adv.title}</h3>
-                <p style={{ color: "#5a7080", fontSize: "14.5px", lineHeight: 1.75, fontWeight: 600, marginBottom: "12px" }}>{adv.short}</p>
-                <p style={{ color: "#7a8fa0", fontSize: "13.5px", lineHeight: 1.7 }}>{adv.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 5. TRUTH & TRANSPARENCY ───────────────────────────── */}
-      <section style={{ background: "white", padding: "100px 0" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ textAlign: "center", marginBottom: "56px" }}>
-            <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>What You Need To Know</div>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em", marginBottom: "16px" }}>
-              The <span style={{ color: ACCENT }}>Truth.</span>
-            </h2>
-            <p style={{ color: "#5a7080", fontSize: "17px", lineHeight: 1.7, maxWidth: "560px", margin: "0 auto" }}>
-              Learn the reality of the insurance industry and decide for yourself where you will have the best shot at success!
-            </p>
-          </div>
-
-          {/* Accordion */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "48px" }}>
-            {truthItems.map((item, i) => (
-              <div key={i} style={{ border: `1.5px solid ${openToggle === i ? PRIMARY : "#dde8f0"}`, borderRadius: "14px", overflow: "hidden", transition: "all 0.3s" }}>
-                <button onClick={() => setOpenToggle(openToggle === i ? null : i)} style={{ width: "100%", padding: "20px 28px", background: openToggle === i ? `${PRIMARY}08` : "white", display: "flex", justifyContent: "space-between", alignItems: "center", border: "none", cursor: "pointer", textAlign: "left", transition: "background 0.2s" }}>
-                  <span style={{ fontSize: "15px", fontWeight: 800, color: openToggle === i ? PRIMARY : DARK, letterSpacing: "0.04em" }}>{item.label}</span>
-                  <span style={{ fontSize: "22px", color: PRIMARY, fontWeight: 300, lineHeight: 1, transform: openToggle === i ? "rotate(45deg)" : "rotate(0)", transition: "transform 0.25s" }}>+</span>
-                </button>
-                {openToggle === i && (
-                  <div style={{ padding: "0 28px 24px", borderTop: `1px solid ${PRIMARY}18` }}>
-                    <p style={{ color: "#4a6070", fontSize: "15px", lineHeight: 1.8, paddingTop: "18px" }}>{item.content}</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              {coreValues.map((adv) => (
+                <div key={adv.num} style={{ display: "flex", gap: "16px" }}>
+                  <div style={{ flexShrink: 0, fontSize: "18px", fontWeight: 900, color: PRIMARY, letterSpacing: "0.05em", marginTop: "2px" }}>{adv.num}.</div>
+                  <div>
+                    <h3 style={{ fontSize: "18px", fontWeight: 800, color: DARK, marginBottom: "8px" }}>{adv.title}</h3>
+                    <p style={{ color: "#5a7080", fontSize: "15px", lineHeight: 1.7 }}>{adv.body}</p>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "14px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
-              Apply Now
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 6. COMPENSATION BREAKDOWN ─────────────────────────── */}
-      <section style={{ background: DARK, padding: "100px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <div style={{ fontSize: "12px", fontWeight: 800, color: "#5bb8e6", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>Earnings Potential</div>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: "white", letterSpacing: "-0.02em" }}>
-              Aggressive <span style={{ color: "#5bb8e6" }}>Compensation</span>
-            </h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "24px" }}>
-            {/* Math Breakdown */}
-            <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "18px", padding: "36px 28px", textAlign: "center" }}>
-              <div style={{ fontSize: "13px", fontWeight: 700, color: "#5bb8e6", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "20px" }}>The Math</div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "20px", flexWrap: "wrap" }}>
-                {[["100%", "Contract Rate"], ["×", ""], ["$1,000", "Annual Premium"], ["×", ""], ["75%", "Advance"]].map((item, i) => (
-                  item[0] === "×" ? <div key={i} style={{ color: "#5bb8e6", fontSize: "24px", fontWeight: 700 }}>×</div> :
-                    <div key={i} style={{ background: "rgba(91,184,230,0.12)", borderRadius: "10px", padding: "12px 16px", textAlign: "center" }}>
-                      <div style={{ fontSize: "22px", fontWeight: 900, color: "white" }}>{item[0]}</div>
-                      <div style={{ fontSize: "11px", color: "#8ab4c8", marginTop: "4px" }}>{item[1]}</div>
-                    </div>
-                ))}
-              </div>
-              <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "20px" }}>
-                <div style={{ fontSize: "13px", color: "#8ab4c8", marginBottom: "8px" }}>= Your Commission</div>
-                <div style={{ fontSize: "42px", fontWeight: 900, color: "#5bb8e6" }}>$750</div>
-              </div>
-            </div>
-
-            {/* Example */}
-            <div style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, borderRadius: "18px", padding: "36px 28px" }}>
-              <div style={{ fontSize: "13px", fontWeight: 700, color: "rgba(255,255,255,0.7)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "20px" }}>Example Case</div>
-              <div style={{ fontSize: "16px", color: "white", lineHeight: 1.75 }}>
-                If an agent writes a policy with a <strong>$10 annual premium</strong> at a <strong>100% contract rate</strong>, they receive a <strong style={{ color: "#9dd6f0" }}>$7.50 advance</strong> from the carrier. The remaining 25% is paid out in months 10, 11, and 12 as long as the policy remains active.
-              </div>
-            </div>
-
-            {/* Note */}
-            <div style={{ background: "rgba(173,31,31,0.12)", border: "1px solid rgba(173,31,31,0.3)", borderRadius: "18px", padding: "36px 28px" }}>
-              <div style={{ fontSize: "13px", fontWeight: 700, color: "#e07070", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "20px" }}>Important Note</div>
-              <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "15px", lineHeight: 1.75 }}>
-                Results are influenced by multiple factors and are not guaranteed. Individual agent performance, carrier selection, and market conditions all play a role in actual earnings.
-              </p>
-              <div style={{ marginTop: "28px" }}>
-                <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "12px 28px", borderRadius: "50px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
-                  Apply Now →
-                </a>
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── 7. CARRIER BENEFITS ───────────────────────────────── */}
-      <section style={{ background: "#f4f8fb", padding: "100px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ textAlign: "center", marginBottom: "16px" }}>
-            <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>Our Partners</div>
-            <h2 style={{ fontSize: "clamp(24px,2.8vw,38px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em", marginBottom: "16px" }}>
-              We partner with top <span style={{ color: PRIMARY }}>Insurance Carriers</span>
-            </h2>
-            <p style={{ color: "#5a7080", fontSize: "16px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto 48px" }}>
-              Safety Harbour Insurance partners with the top carriers in the industry. Our independent agents can receive contract rates up to <strong style={{ color: PRIMARY }}>145%</strong> from certain carriers, paid directly to you.
-            </p>
-          </div>
-          {/* Carrier logo grid */}
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "18px", marginBottom: "48px" }}>
-            {carriers.map((carrier, i) => (
-              <div key={i} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "14px", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "center", minWidth: "140px", height: "80px", boxShadow: "0 2px 12px rgba(13,95,132,0.06)", transition: "all 0.25s", cursor: "default" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.boxShadow = `0 6px 24px ${PRIMARY}22`; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(13,95,132,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={carrier.src} alt={carrier.alt} style={{ maxWidth: "110px", maxHeight: "48px", width: "auto", height: "auto", objectFit: "contain", filter: "grayscale(100%)", transition: "filter 0.25s" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0%)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(100%)"; }} />
+      {/* ─── 4. QUICK LEAD FORM ────────────────────────────────── */}
+      <section id="quote" style={{ background: "linear-gradient(to bottom, white 0%, #f4f8fb 120px, #f4f8fb 100%)", padding: "100px 0" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 20px 60px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
+            <div style={{ textAlign: "center", marginBottom: "36px" }}>
+              <h2 style={{ fontSize: "32px", fontWeight: 900, color: DARK, marginBottom: "12px", letterSpacing: "-0.02em" }}>
+                Get Your <span style={{ color: PRIMARY }}>Custom Quote</span>
+              </h2>
+              <p style={{ color: "#5a7080", fontSize: "16px" }}>Secure peace of mind for your loved ones today.</p>
+            </div>
+            
+            <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={e => e.preventDefault()}>
+              <div style={{ display: "flex", gap: "20px" }}>
+                <input type="text" placeholder="First Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
+                <input type="text" placeholder="Last Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
               </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "14px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
-              Apply Now
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-            </a>
+              <input type="email" placeholder="Email Address" style={{ padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
+              
+              <button style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, color: "white", padding: "18px", borderRadius: "12px", fontSize: "16px", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: `0 8px 24px ${PRIMARY}44`, transition: "all 0.3s", marginTop: "12px" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 32px ${PRIMARY}55`; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px ${PRIMARY}44`; }}>
+                Submit Request
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
-      {/* ─── 8. SERVICES ───────────────────────────────────────── */}
-      <section style={{ background: "white", padding: "100px 0" }}>
+      {/* ─── 5. SERVICES SECTION ───────────────────────────────── */}
+      <section style={{ background: "linear-gradient(to bottom, #f4f8fb 0%, white 120px, white 100%)", padding: "100px 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>Resources for Success</div>
-            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em" }}>
-              Our <span style={{ color: PRIMARY }}>Insurance Products</span>
+            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em", marginBottom: "16px" }}>
+              Comprehensive <span style={{ color: PRIMARY }}>Protection Tools</span>
             </h2>
+            <p style={{ color: "#5a7080", fontSize: "16px", maxWidth: "600px", margin: "0 auto" }}>We provide the resources for your family’s financial security and growth.</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "22px" }}>
             {services.map((svc) => (
@@ -402,7 +302,170 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 9. FOOTER ─────────────────────────────────────────── */}
+      {/* ─── 6. SOCIAL PROOF & TESTIMONIALS ────────────────────── */}
+      <section style={{ background: DARK, padding: "100px 0", color: "white" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, letterSpacing: "-0.02em", marginBottom: "16px" }}>
+              Our Reputation is Built on Trust.
+            </h2>
+            <p style={{ color: "#8ab4c8", fontSize: "16px", maxWidth: "600px", margin: "0 auto 36px" }}>Proudly featured and recognized by industry leaders.</p>
+            {/* Medias/Logos mock */}
+            <div style={{ display: "flex", gap: "32px", justifyContent: "center", alignItems: "center", opacity: 0.5, flexWrap: "wrap", marginBottom: "40px" }}>
+              <div style={{ fontSize: "24px", fontWeight: 800, fontFamily: "serif" }}>Forbes</div>
+              <div style={{ fontSize: "24px", fontWeight: 800, fontFamily: "sans-serif" }}>Bloomberg</div>
+              <div style={{ fontSize: "24px", fontWeight: 800, fontStyle: "italic" }}>WSJ</div>
+            </div>
+          </div>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+            {testimonials.slice(0, 3).map((item, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "18px", padding: "36px 32px", display: "flex", flexDirection: "column" }}>
+                <div style={{ color: "#facc15", fontSize: "18px", marginBottom: "16px", letterSpacing: "2px" }}>{item.stars}</div>
+                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>"{item.quote}"</p>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "16px" }}>
+                    {item.name.charAt(0)}
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: "15px" }}>— {item.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* More reviews placeholder style layout */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px", marginTop: "24px" }}>
+             {testimonials.slice(3, 5).map((item, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "18px", padding: "36px 32px", display: "flex", flexDirection: "column" }}>
+                <div style={{ color: "#facc15", fontSize: "18px", marginBottom: "16px", letterSpacing: "2px" }}>{item.stars}</div>
+                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>"{item.quote}"</p>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "16px" }}>
+                    {item.name.charAt(0)}
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: "15px" }}>— {item.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 7. GET STARTED CTA SECTION ────────────────────────── */}
+      <section style={{ background: "#f4f8fb", padding: "100px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", textAlign: "center" }}>
+          <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>How Can We Help You?</div>
+          <h2 style={{ fontSize: "clamp(32px,3.5vw,48px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em", marginBottom: "48px" }}>
+             Let’s Build Your <span style={{ color: PRIMARY }}>Safety Harbour</span>
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "800px", margin: "0 auto" }}>
+            <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 12px 40px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
+              <div style={{ fontSize: "48px", marginBottom: "20px" }}>💼</div>
+              <h3 style={{ fontSize: "24px", fontWeight: 900, color: DARK, marginBottom: "24px" }}>Agents</h3>
+              <a href="#" style={{ display: "inline-block", background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, color: "white", padding: "16px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${PRIMARY}44`, transition: "all 0.3s" }}
+                onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
+                Join Our Network
+              </a>
+            </div>
+            <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 12px 40px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
+               <div style={{ fontSize: "48px", marginBottom: "20px" }}>👨‍👩‍👧‍👦</div>
+              <h3 style={{ fontSize: "24px", fontWeight: 900, color: DARK, marginBottom: "24px" }}>Families</h3>
+              <a href="#quote" style={{ display: "inline-block", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "16px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
+                 onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
+                 onMouseLeave={e => { (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
+                Request A Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 8. CARRIER PARTNERS ───────────────────────────────── */}
+      <section style={{ background: "white", padding: "100px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em", marginBottom: "16px" }}>
+              We Partner with the Nation’s <span style={{ color: PRIMARY }}>Top Insurance Carriers.</span>
+            </h2>
+            <p style={{ color: "#5a7080", fontSize: "16px", lineHeight: 1.7, maxWidth: "700px", margin: "0 auto" }}>
+              From IULs to Fixed Indexed Annuities, Safety Harbour Insurance proudly collaborates with the industry's most trusted carriers. This allows our agents to find the best product at the best price for your specific needs.
+            </p>
+          </div>
+          {/* Carrier logo grid */}
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "18px", marginBottom: "48px" }}>
+            {carriers.map((carrier, i) => (
+              <div key={i} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "14px", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "center", minWidth: "140px", height: "80px", boxShadow: "0 2px 12px rgba(13,95,132,0.06)", transition: "all 0.25s", cursor: "default" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.boxShadow = `0 6px 24px ${PRIMARY}22`; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(13,95,132,0.06)"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={carrier.src} alt={carrier.alt} style={{ maxWidth: "110px", maxHeight: "48px", width: "auto", height: "auto", objectFit: "contain", filter: "grayscale(100%)", transition: "filter 0.25s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(0%)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = "grayscale(100%)"; }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 9. BLOG / ARTICLES SECTION ────────────────────────── */}
+      <section style={{ background: "#f4f8fb", padding: "100px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800, color: ACCENT, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "12px" }}>Insights & News</div>
+            <h2 style={{ fontSize: "clamp(28px,3vw,42px)", fontWeight: 900, color: DARK, letterSpacing: "-0.02em" }}>
+              Latest <span style={{ color: PRIMARY }}>Articles & Insights</span>
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px" }}>
+            {articles.map((title, i) => (
+              <a key={i} href="#" style={{ display: "block", background: "white", borderRadius: "16px", padding: "32px 24px", textDecoration: "none", border: "1px solid #dde8f0", transition: "all 0.3s", boxShadow: "0 4px 16px rgba(13,95,132,0.04)" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 30px rgba(13,95,132,0.1)"; (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(13,95,132,0.04)"; (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; }}>
+                <div style={{ fontSize: "12px", color: "#8ab4c8", fontWeight: 700, marginBottom: "12px", textTransform: "uppercase" }}>Insurance Guide</div>
+                <h3 style={{ fontSize: "18px", fontWeight: 800, color: DARK, lineHeight: 1.4, marginBottom: "16px" }}>{title}</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", color: PRIMARY, fontSize: "13.5px", fontWeight: 700 }}>
+                  Read Article
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 10. CONTACT BANNER ────────────────────────────────── */}
+      <section id="contact" style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, padding: "80px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "40px" }}>
+          <div>
+            <h2 style={{ fontSize: "32px", fontWeight: 900, color: "white", marginBottom: "12px", letterSpacing: "-0.02em" }}>
+              Need more details?
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px" }}>
+              Our team is standing by to assist you.
+            </p>
+            <div style={{ display: "flex", gap: "24px", marginTop: "24px", flexWrap: "wrap" }}>
+               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
+                 <span style={{ fontSize: "20px" }}>✉</span> info@safetyharbourinsurance.io
+               </div>
+               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
+                 <span style={{ fontSize: "20px" }}>📞</span> +1 786-233-0773
+               </div>
+               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
+                 <span style={{ fontSize: "20px" }}>📍</span> 3350 Virginia St, Coconut Grove, Miami, FL
+               </div>
+            </div>
+          </div>
+          <div>
+            <a href="mailto:info@safetyharbourinsurance.io" style={{ display: "inline-block", background: "white", color: PRIMARY, padding: "18px 42px", borderRadius: "50px", fontSize: "16px", fontWeight: 800, textDecoration: "none", boxShadow: `0 8px 30px rgba(0,0,0,0.15)`, transition: "all 0.3s" }}
+               onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
+               onMouseLeave={e => { (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 11. FOOTER ────────────────────────────────────────── */}
       <footer style={{ background: DARK, color: "white", padding: "80px 0 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1.4fr", gap: "60px", paddingBottom: "60px" }}>
@@ -421,6 +484,7 @@ export default function Home() {
                   { label: "X", path: "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" },
                   { label: "Instagram", path: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01 M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z" },
                   { label: "LinkedIn", path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" },
+                  { label: "TikTok", path: "M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.46-5.49-.03-2.31 1.09-4.5 2.98-5.71 1.25-.8 2.76-1.18 4.24-1.04v4.06c-.82-.01-1.64.21-2.31.67-.66.45-1.11 1.16-1.22 1.95-.12.87.21 1.77.83 2.37.58.56 1.44.82 2.24.69.87-.14 1.62-.71 2-1.49.32-.67.43-1.43.41-2.18V.02z" }
                 ].map(social => (
                   <a key={social.label} href="#" aria-label={social.label} style={{ width: "38px", height: "38px", background: "rgba(255,255,255,0.08)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s", textDecoration: "none" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = PRIMARY; }}
@@ -478,8 +542,14 @@ export default function Home() {
       </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueSemiBold.otf') format('opentype'); font-weight: 400; }
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueSemiBold.otf') format('opentype'); font-weight: 500; }
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueSemiBold.otf') format('opentype'); font-weight: 600; }
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueExtraBold.otf') format('opentype'); font-weight: 700; }
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueExtraBold.otf') format('opentype'); font-weight: 800; }
+        @font-face { font-family: 'Galano Grotesque'; src: url('/fonts/GalanoGrotesqueExtraBold.otf') format('opentype'); font-weight: 900; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         @media (max-width: 1024px) {
           .nav-links { display: none !important; }
           .hamburger-btn { display: flex !important; flex-direction: column; }
