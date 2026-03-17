@@ -17,9 +17,27 @@ export default function Home() {
   }, []);
 
   const stats = [
-    { value: "$150 Billion+", label: "Life Insurance Coverage Placed", color: "#3b82f6" },
-    { value: "1,000,000+", label: "Families Protected Nationwide", color: "#16a34a" },
-    { value: "$800 Million+", label: "Annual Premiums Managed", color: "#8b5cf6" },
+    {
+      value: "$150 Billion+",
+      label: "Life Insurance Coverage Placed",
+      color: "#3b82f6",
+      icon: "/hero-section/accent-2.svg",
+      alt: "Coverage icon",
+    },
+    {
+      value: "1,000,000+",
+      label: "Families Protected Nationwide",
+      color: "#16a34a",
+      icon: "/hero-section/accent-1.svg",
+      alt: "Families icon",
+    },
+    {
+      value: "$800 Million+",
+      label: "Annual Premiums Managed",
+      color: "#8b5cf6",
+      icon: "/hero-section/accent-3.svg",
+      alt: "Premium management icon",
+    },
   ];
 
   const coreValues = [
@@ -103,10 +121,25 @@ export default function Home() {
     { src: "/reviews/Yahoo-Symbol.png", alt: "Yahoo" },
   ];
 
-  const heroAccents = [
-    { src: "/hero-section/accent-1.svg", top: "22%", left: "5%" },
-    { src: "/hero-section/accent-2.svg", top: "30%", right: "6%" },
-    { src: "/hero-section/accent-3.svg", bottom: "24%", left: "10%" },
+  const contactItems = [
+    { icon: "/contact/email.svg", alt: "Email", text: "info@safetyharbourinsurance.io" },
+    { icon: "/contact/phone.svg", alt: "Phone", text: "+1 786-233-0773" },
+    { icon: "/contact/location.svg", alt: "Location", text: "3350 Virginia St, Coconut Grove, Miami, FL 33133" },
+  ];
+
+  const footerContactItems = [
+    { icon: "/footer/email.svg", alt: "Email", text: "info@safetyharbourinsurance.io" },
+    { icon: "/footer/phone.svg", alt: "Phone", text: "+1 786-233-0773" },
+    { icon: "/footer/location.svg", alt: "Location", text: "3350 Virginia St, Coconut Grove, Miami, FL 33133" },
+  ];
+
+  const footerSocials = [
+    { label: "Facebook", icon: "/footer/facebook.png" },
+    { label: "X", icon: "/footer/x.png" },
+    { label: "Instagram", icon: "/footer/instagram.png" },
+    { label: "LinkedIn", icon: "/footer/linkedin.png" },
+    { label: "TikTok", icon: "/footer/tiktok.png" },
+    { label: "YouTube", icon: "/footer/youtube.png" },
   ];
 
   const articles = [
@@ -199,32 +232,6 @@ export default function Home() {
         alignItems: "center", justifyContent: "center", overflow: "visible", paddingTop: "140px",
         backgroundImage: "url('/hero-section/bg.png')", backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        {heroAccents.map((accent) => (
-          <div
-            key={accent.src}
-            style={{
-              position: "absolute",
-              width: "140px",
-              height: "140px",
-              borderRadius: "32px",
-              background: "rgba(255,255,255,0.38)",
-              border: "1px solid rgba(13,95,132,0.08)",
-              boxShadow: "0 20px 40px rgba(13,95,132,0.08)",
-              backdropFilter: "blur(10px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              opacity: 0.18,
-              pointerEvents: "none",
-              zIndex: 1,
-              ...accent,
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={accent.src} alt="" aria-hidden="true" style={{ width: "72px", height: "72px", objectFit: "contain", display: "block" }} />
-          </div>
-        ))}
-
         {/* Fade Out Gradient for smooth transition */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "180px", background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)", zIndex: 1 }} />
         
@@ -258,8 +265,15 @@ export default function Home() {
               
               {/* Colored Left Border */}
               <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "6px", backgroundColor: stat.color }} />
-              
-              <div style={{ fontSize: "15px", fontWeight: 600, color: "#8ab4c8", marginBottom: "16px" }}>{stat.label}</div>
+
+              <div style={{ width: "100%", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "16px", marginBottom: "16px" }}>
+                <div style={{ fontSize: "15px", fontWeight: 600, color: "#8ab4c8", maxWidth: "220px" }}>{stat.label}</div>
+                <div style={{ width: "56px", height: "56px", borderRadius: "16px", background: `${stat.color}12`, border: `1px solid ${stat.color}22`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={stat.icon} alt={stat.alt} style={{ width: "30px", height: "30px", objectFit: "contain", display: "block", opacity: 0.82 }} />
+                </div>
+              </div>
+
               <div style={{ fontSize: "clamp(30px,3.5vw,42px)", fontWeight: 900, color: stat.color, lineHeight: 1 }}>{stat.value}</div>
             </div>
           ))}
@@ -511,22 +525,28 @@ export default function Home() {
       <section id="contact" style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, padding: "80px 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "40px" }}>
           <div>
-            <h2 style={{ fontSize: "32px", fontWeight: 900, color: "white", marginBottom: "12px", letterSpacing: "-0.02em" }}>
-              Need more details?
-            </h2>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "12px" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.14)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/contact/support.svg" alt="Support" style={{ width: "28px", height: "28px", objectFit: "contain", display: "block" }} />
+              </div>
+              <h2 style={{ fontSize: "32px", fontWeight: 900, color: "white", letterSpacing: "-0.02em" }}>
+                Need more details?
+              </h2>
+            </div>
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px" }}>
               Our team is standing by to assist you.
             </p>
             <div style={{ display: "flex", gap: "24px", marginTop: "24px", flexWrap: "wrap" }}>
-               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
-                 <span style={{ fontSize: "20px" }}>✉</span> info@safetyharbourinsurance.io
-               </div>
-               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
-                 <span style={{ fontSize: "20px" }}>📞</span> +1 786-233-0773
-               </div>
-               <div style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "8px" }}>
-                 <span style={{ fontSize: "20px" }}>📍</span> 3350 Virginia St, Coconut Grove, Miami, FL
-               </div>
+              {contactItems.map((item) => (
+                <div key={item.text} style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.icon} alt={item.alt} style={{ width: "18px", height: "18px", objectFit: "contain", display: "block" }} />
+                  </div>
+                  <span>{item.text}</span>
+                </div>
+              ))}
             </div>
           </div>
           <div>
@@ -547,25 +567,18 @@ export default function Home() {
             {/* Brand col */}
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo2.png" alt="Safety Harbour Insurance" style={{ height: "72px", marginBottom: "24px", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
+              <img src="/footer/logo.png" alt="Safety Harbour Insurance" style={{ height: "72px", marginBottom: "24px", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
               <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", lineHeight: 1.8, maxWidth: "340px" }}>
                 At Safety Harbour Insurance, we are dedicated to helping you protect what matters most. Our mission is to ensure your family&rsquo;s future is secure through personalized, expert insurance solutions.
               </p>
               {/* Social icons */}
               <div style={{ display: "flex", gap: "12px", marginTop: "28px" }}>
-                {[
-                  { label: "Facebook", path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
-                  { label: "X", path: "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" },
-                  { label: "Instagram", path: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01 M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z" },
-                  { label: "LinkedIn", path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" },
-                  { label: "TikTok", path: "M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.46-5.49-.03-2.31 1.09-4.5 2.98-5.71 1.25-.8 2.76-1.18 4.24-1.04v4.06c-.82-.01-1.64.21-2.31.67-.66.45-1.11 1.16-1.22 1.95-.12.87.21 1.77.83 2.37.58.56 1.44.82 2.24.69.87-.14 1.62-.71 2-1.49.32-.67.43-1.43.41-2.18V.02z" }
-                ].map(social => (
-                  <a key={social.label} href="#" aria-label={social.label} style={{ width: "38px", height: "38px", background: "rgba(255,255,255,0.08)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s", textDecoration: "none" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = PRIMARY; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)"; }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d={social.path} />
-                    </svg>
+                {footerSocials.map((social) => (
+                  <a key={social.label} href="#" aria-label={social.label} style={{ width: "38px", height: "38px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", transition: "transform 0.2s, opacity 0.2s", textDecoration: "none", opacity: 0.92 }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.opacity = "1"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.opacity = "0.92"; }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={social.icon} alt={social.label} style={{ width: "30px", height: "30px", objectFit: "contain", display: "block" }} />
                   </a>
                 ))}
               </div>
@@ -586,13 +599,12 @@ export default function Home() {
             {/* Contact col */}
             <div>
               <div style={{ fontSize: "13px", fontWeight: 800, color: "rgba(255,255,255,0.45)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "22px" }}>Contact</div>
-              {[
-                { icon: "✉", text: "info@safetyharbourinsurance.io" },
-                { icon: "📞", text: "+1 786-233-0773" },
-                { icon: "📍", text: "3350 Virginia St, Coconut Grove, Miami, FL 33133" },
-              ].map((item) => (
+              {footerContactItems.map((item) => (
                 <div key={item.text} style={{ display: "flex", gap: "12px", marginBottom: "18px", alignItems: "flex-start" }}>
-                  <span style={{ fontSize: "15px", marginTop: "1px", flexShrink: 0 }}>{item.icon}</span>
+                  <div style={{ width: "18px", height: "18px", marginTop: "2px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.icon} alt={item.alt} style={{ width: "16px", height: "16px", objectFit: "contain", display: "block" }} />
+                  </div>
                   <span style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", lineHeight: 1.6 }}>{item.text}</span>
                 </div>
               ))}
