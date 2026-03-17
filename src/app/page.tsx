@@ -17,9 +17,9 @@ export default function Home() {
   }, []);
 
   const stats = [
-    { value: "$150 Billion+", label: "Life Insurance Coverage Placed", icon: "/icon-document.svg" },
-    { value: "1,000,000+", label: "Families Protected Nationwide", icon: "/icon-agent.svg" },
-    { value: "$800 Million+", label: "Annual Premiums Managed", icon: "/icon-location.svg" },
+    { value: "$150 Billion+", label: "Life Insurance Coverage Placed", color: "#3b82f6" },
+    { value: "1,000,000+", label: "Families Protected Nationwide", color: "#16a34a" },
+    { value: "$800 Million+", label: "Annual Premiums Managed", color: "#8b5cf6" },
   ];
 
   const coreValues = [
@@ -96,11 +96,40 @@ export default function Home() {
     }
   ];
 
+  const mediaLogos = [
+    { src: "/reviews/cnbc-logo-black-transparent.png", alt: "CNBC" },
+    { src: "/reviews/bbb-logo-black-and-white.png", alt: "Better Business Bureau" },
+    { src: "/reviews/Inc__magazine_logo.png", alt: "Inc. Magazine" },
+    { src: "/reviews/Yahoo-Symbol.png", alt: "Yahoo" },
+  ];
+
+  const heroAccents = [
+    { src: "/hero-section/accent-1.svg", top: "22%", left: "5%" },
+    { src: "/hero-section/accent-2.svg", top: "30%", right: "6%" },
+    { src: "/hero-section/accent-3.svg", bottom: "24%", left: "10%" },
+  ];
+
   const articles = [
-    "Why Final Expense Insurance is a Smart Choice at Any Age.",
-    "Protecting Your Home: A Guide to Mortgage Insurance.",
-    "Understanding the Benefits of Indexed Universal Life.",
-    "The Application Process: What to Expect When Securing Coverage.",
+    {
+      title: "Why Final Expense Insurance is a Smart Choice at Any Age.",
+      image: "/articles/b93de3_1eb0d07f1408483a8f29cf17546293dd~mv2.jpeg",
+      alt: "Final expense insurance article cover",
+    },
+    {
+      title: "Protecting Your Home: A Guide to Mortgage Insurance.",
+      image: "/articles/b93de3_36a4042ff8784997bfa071c425be1fa7~mv2.jpeg",
+      alt: "Mortgage insurance article cover",
+    },
+    {
+      title: "Understanding the Benefits of Indexed Universal Life.",
+      image: "/articles/b93de3_5f0d32d5e274429c9464b8a90f2b7867~mv2.jpeg",
+      alt: "Indexed universal life article cover",
+    },
+    {
+      title: "The Application Process: What to Expect When Securing Coverage.",
+      image: "/articles/b93de3_8b2860f8eb124cd3910ebadbec26babc~mv2.jpeg",
+      alt: "Insurance application process article cover",
+    },
   ];
 
   const carriers = [
@@ -168,8 +197,34 @@ export default function Home() {
       <section style={{
         minHeight: "100vh", position: "relative", display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center", overflow: "visible", paddingTop: "140px",
-        backgroundImage: "url('/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center",
+        backgroundImage: "url('/hero-section/bg.png')", backgroundSize: "cover", backgroundPosition: "center",
       }}>
+        {heroAccents.map((accent) => (
+          <div
+            key={accent.src}
+            style={{
+              position: "absolute",
+              width: "140px",
+              height: "140px",
+              borderRadius: "32px",
+              background: "rgba(255,255,255,0.38)",
+              border: "1px solid rgba(13,95,132,0.08)",
+              boxShadow: "0 20px 40px rgba(13,95,132,0.08)",
+              backdropFilter: "blur(10px)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              opacity: 0.18,
+              pointerEvents: "none",
+              zIndex: 1,
+              ...accent,
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={accent.src} alt="" aria-hidden="true" style={{ width: "72px", height: "72px", objectFit: "contain", display: "block" }} />
+          </div>
+        ))}
+
         {/* Fade Out Gradient for smooth transition */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "180px", background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)", zIndex: 1 }} />
         
@@ -197,14 +252,15 @@ export default function Home() {
         {/* Stat cards — overflow bottom */}
         <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "24px", position: "relative", zIndex: 10, marginTop: "40px", marginBottom: "40px" }}>
           {stats.map((stat, i) => (
-            <div key={i} style={{ background: "white", padding: "36px 28px 28px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", borderRadius: "16px", boxShadow: "0 8px 40px rgba(13,95,132,0.13)", transition: "all 0.3s", cursor: "default" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 50px rgba(13,95,132,0.2)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 40px rgba(13,95,132,0.13)"; }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={stat.icon} alt={stat.label} style={{ width: "52px", height: "52px", objectFit: "contain", marginBottom: "16px", filter: "invert(29%) sepia(60%) saturate(600%) hue-rotate(167deg) brightness(75%) contrast(110%)" }} />
-              <div style={{ fontSize: "clamp(28px,3vw,38px)", fontWeight: 900, color: PRIMARY, lineHeight: 1 }}>{stat.value}</div>
-              <div style={{ width: "48px", height: "2px", background: "#e2ecf4", margin: "18px auto" }} />
-              <div style={{ fontSize: "15px", fontWeight: 700, color: "#6b8fa6" }}>{stat.label}</div>
+            <div key={i} style={{ background: "white", padding: "32px 32px", display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)", border: "1px solid #f0f4f8", transition: "all 0.3s", cursor: "default", position: "relative", overflow: "hidden" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 30px rgba(0,0,0,0.1)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; }}>
+              
+              {/* Colored Left Border */}
+              <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "6px", backgroundColor: stat.color }} />
+              
+              <div style={{ fontSize: "15px", fontWeight: 600, color: "#8ab4c8", marginBottom: "16px" }}>{stat.label}</div>
+              <div style={{ fontSize: "clamp(30px,3.5vw,42px)", fontWeight: 900, color: stat.color, lineHeight: 1 }}>{stat.value}</div>
             </div>
           ))}
         </div>
@@ -310,11 +366,17 @@ export default function Home() {
               Our Reputation is Built on Trust.
             </h2>
             <p style={{ color: "#8ab4c8", fontSize: "16px", maxWidth: "600px", margin: "0 auto 36px" }}>Proudly featured and recognized by industry leaders.</p>
-            {/* Medias/Logos mock */}
-            <div style={{ display: "flex", gap: "32px", justifyContent: "center", alignItems: "center", opacity: 0.5, flexWrap: "wrap", marginBottom: "40px" }}>
-              <div style={{ fontSize: "24px", fontWeight: 800, fontFamily: "serif" }}>Forbes</div>
-              <div style={{ fontSize: "24px", fontWeight: 800, fontFamily: "sans-serif" }}>Bloomberg</div>
-              <div style={{ fontSize: "24px", fontWeight: 800, fontStyle: "italic" }}>WSJ</div>
+            <div style={{ display: "flex", gap: "32px", justifyContent: "center", alignItems: "center", flexWrap: "wrap", marginBottom: "40px" }}>
+              {mediaLogos.map((logo) => (
+                <div key={logo.src} style={{ height: "28px", display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.72 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    style={{ maxHeight: "28px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
           
@@ -322,7 +384,7 @@ export default function Home() {
             {testimonials.slice(0, 3).map((item, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "18px", padding: "36px 32px", display: "flex", flexDirection: "column" }}>
                 <div style={{ color: "#facc15", fontSize: "18px", marginBottom: "16px", letterSpacing: "2px" }}>{item.stars}</div>
-                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>"{item.quote}"</p>
+                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>&ldquo;{item.quote}&rdquo;</p>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "16px" }}>
                     {item.name.charAt(0)}
@@ -337,7 +399,7 @@ export default function Home() {
              {testimonials.slice(3, 5).map((item, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "18px", padding: "36px 32px", display: "flex", flexDirection: "column" }}>
                 <div style={{ color: "#facc15", fontSize: "18px", marginBottom: "16px", letterSpacing: "2px" }}>{item.stars}</div>
-                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>"{item.quote}"</p>
+                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.7, flex: 1, marginBottom: "24px", fontStyle: "italic" }}>&ldquo;{item.quote}&rdquo;</p>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "16px" }}>
                     {item.name.charAt(0)}
@@ -359,7 +421,10 @@ export default function Home() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "800px", margin: "0 auto" }}>
             <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 12px 40px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
-              <div style={{ fontSize: "48px", marginBottom: "20px" }}>💼</div>
+              <div style={{ width: "72px", height: "72px", margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/getting-started/agents.svg" alt="Agent support icon" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+              </div>
               <h3 style={{ fontSize: "24px", fontWeight: 900, color: DARK, marginBottom: "24px" }}>Agents</h3>
               <a href="#" style={{ display: "inline-block", background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, color: "white", padding: "16px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${PRIMARY}44`, transition: "all 0.3s" }}
                 onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
@@ -368,7 +433,10 @@ export default function Home() {
               </a>
             </div>
             <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 12px 40px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
-               <div style={{ fontSize: "48px", marginBottom: "20px" }}>👨‍👩‍👧‍👦</div>
+               <div style={{ width: "72px", height: "72px", margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/getting-started/families.svg" alt="Families icon" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+              </div>
               <h3 style={{ fontSize: "24px", fontWeight: 900, color: DARK, marginBottom: "24px" }}>Families</h3>
               <a href="#quote" style={{ display: "inline-block", background: `linear-gradient(135deg, ${ACCENT}, #8b1818)`, color: "white", padding: "16px 36px", borderRadius: "50px", fontSize: "15px", fontWeight: 700, textDecoration: "none", boxShadow: `0 8px 24px ${ACCENT}44`, transition: "all 0.3s" }}
                  onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
@@ -388,7 +456,7 @@ export default function Home() {
               We Partner with the Nation’s <span style={{ color: PRIMARY }}>Top Insurance Carriers.</span>
             </h2>
             <p style={{ color: "#5a7080", fontSize: "16px", lineHeight: 1.7, maxWidth: "700px", margin: "0 auto" }}>
-              From IULs to Fixed Indexed Annuities, Safety Harbour Insurance proudly collaborates with the industry's most trusted carriers. This allows our agents to find the best product at the best price for your specific needs.
+              From IULs to Fixed Indexed Annuities, Safety Harbour Insurance proudly collaborates with the industry&rsquo;s most trusted carriers. This allows our agents to find the best product at the best price for your specific needs.
             </p>
           </div>
           {/* Carrier logo grid */}
@@ -417,15 +485,21 @@ export default function Home() {
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px" }}>
-            {articles.map((title, i) => (
-              <a key={i} href="#" style={{ display: "block", background: "white", borderRadius: "16px", padding: "32px 24px", textDecoration: "none", border: "1px solid #dde8f0", transition: "all 0.3s", boxShadow: "0 4px 16px rgba(13,95,132,0.04)" }}
+            {articles.map((article, i) => (
+              <a key={i} href="#" style={{ display: "block", background: "white", borderRadius: "16px", textDecoration: "none", border: "1px solid #dde8f0", transition: "all 0.3s", boxShadow: "0 4px 16px rgba(13,95,132,0.04)", overflow: "hidden" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 30px rgba(13,95,132,0.1)"; (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(13,95,132,0.04)"; (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; }}>
-                <div style={{ fontSize: "12px", color: "#8ab4c8", fontWeight: 700, marginBottom: "12px", textTransform: "uppercase" }}>Insurance Guide</div>
-                <h3 style={{ fontSize: "18px", fontWeight: 800, color: DARK, lineHeight: 1.4, marginBottom: "16px" }}>{title}</h3>
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", color: PRIMARY, fontSize: "13.5px", fontWeight: 700 }}>
-                  Read Article
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                <div style={{ aspectRatio: "4 / 3", background: "#e7eff4" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={article.image} alt={article.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div style={{ padding: "24px 24px 28px" }}>
+                  <div style={{ fontSize: "12px", color: "#8ab4c8", fontWeight: 700, marginBottom: "12px", textTransform: "uppercase" }}>Insurance Guide</div>
+                  <h3 style={{ fontSize: "18px", fontWeight: 800, color: DARK, lineHeight: 1.4, marginBottom: "16px" }}>{article.title}</h3>
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px", color: PRIMARY, fontSize: "13.5px", fontWeight: 700 }}>
+                    Read Article
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </div>
                 </div>
               </a>
             ))}
@@ -475,7 +549,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo2.png" alt="Safety Harbour Insurance" style={{ height: "72px", marginBottom: "24px", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
               <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", lineHeight: 1.8, maxWidth: "340px" }}>
-                At Safety Harbour Insurance, we are dedicated to helping you protect what matters most. Our mission is to ensure your family's future is secure through personalized, expert insurance solutions.
+                At Safety Harbour Insurance, we are dedicated to helping you protect what matters most. Our mission is to ensure your family&rsquo;s future is secure through personalized, expert insurance solutions.
               </p>
               {/* Social icons */}
               <div style={{ display: "flex", gap: "12px", marginTop: "28px" }}>
