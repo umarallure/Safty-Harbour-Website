@@ -18,23 +18,23 @@ export default function Home() {
 
   const stats = [
     {
-      value: "$150 Billion+",
-      label: "Life Insurance Coverage Placed",
-      color: "#3b82f6",
+      value: "$5 Million+",
+      label: "Coverage Secured",
+      color: PRIMARY,
       icon: "/hero-section/accent-2.svg",
       alt: "Coverage icon",
     },
     {
-      value: "1,000,000+",
-      label: "Families Protected Nationwide",
-      color: "#16a34a",
+      value: "100,000+",
+      label: "Families Protected",
+      color: ACCENT,
       icon: "/hero-section/accent-1.svg",
       alt: "Families icon",
     },
     {
-      value: "$800 Million+",
-      label: "Annual Premiums Managed",
-      color: "#8b5cf6",
+      value: "$10 Million+",
+      label: "Managed Annually",
+      color: PRIMARY,
       icon: "/hero-section/accent-3.svg",
       alt: "Premium management icon",
     },
@@ -101,16 +101,6 @@ export default function Home() {
       name: "David Chen",
       quote: "I can’t recommend Safety Harbour Insurance enough. There were no high-pressure sales tactics—just honest, clear advice. They helped me find a policy that fits my fixed income perfectly. The peace of mind I have now is priceless.",
       stars: "★★★★★"
-    },
-    {
-      name: "Sarah Jenkins",
-      quote: "Working with Safety Harbour Insurance was a breath of fresh air. They stripped away all the confusing insurance jargon and made everything easy to understand. I now have a policy I actually trust, and I know my family is on solid ground. They truly are the team to turn to for straightforward, honest service.",
-      stars: "★★★★★"
-    },
-    {
-      name: "Gregory Banks",
-      quote: "From the first phone call, I knew Safety Harbour Insurance was different. They didn't just sell me a policy; they listened to my concerns about my family’s long-term growth and helped me set up a plan that protects us today and builds for tomorrow. It’s a relief to work with professionals who prioritize my family’s goals.",
-      stars: "★★★★★"
     }
   ];
 
@@ -157,11 +147,6 @@ export default function Home() {
       title: "Understanding the Benefits of Indexed Universal Life.",
       image: "/articles/b93de3_5f0d32d5e274429c9464b8a90f2b7867~mv2.jpeg",
       alt: "Indexed universal life article cover",
-    },
-    {
-      title: "The Application Process: What to Expect When Securing Coverage.",
-      image: "/articles/b93de3_8b2860f8eb124cd3910ebadbec26babc~mv2.jpeg",
-      alt: "Insurance application process article cover",
     },
   ];
 
@@ -237,7 +222,8 @@ export default function Home() {
         
         <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "40px 48px 12px", width: "100%", position: "relative", zIndex: 2, textAlign: "center" }}>
           <h1 style={{ fontSize: "clamp(44px, 6vw, 84px)", fontWeight: 900, color: DARK, lineHeight: 1.06, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "-0.02em" }}>
-            SAFETY HARBOUR <span style={{ color: PRIMARY }}>INSURANCE</span>
+            <span style={{ color: PRIMARY }}>SAFETY HARBOUR</span>{" "}
+            <span style={{ color: ACCENT }}>INSURANCE</span>
           </h1>
           <p style={{ color: "#3d5166", fontSize: "clamp(18px, 1.8vw, 22px)", lineHeight: 1.6, maxWidth: "680px", margin: "0 auto 36px", fontWeight: 500 }}>
             Securing Your Future, Protecting Your Safety Harbour.
@@ -314,34 +300,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 4. QUICK LEAD FORM ────────────────────────────────── */}
-      <section id="quote" style={{ background: "linear-gradient(to bottom, white 0%, #f4f8fb 120px, #f4f8fb 100%)", padding: "100px 0" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 20px 60px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
-            <div style={{ textAlign: "center", marginBottom: "36px" }}>
-              <h2 style={{ fontSize: "32px", fontWeight: 900, color: DARK, marginBottom: "12px", letterSpacing: "-0.02em" }}>
-                Get Your <span style={{ color: PRIMARY }}>Custom Quote</span>
-              </h2>
-              <p style={{ color: "#5a7080", fontSize: "16px" }}>Secure peace of mind for your loved ones today.</p>
-            </div>
-            
-            <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={e => e.preventDefault()}>
-              <div style={{ display: "flex", gap: "20px" }}>
-                <input type="text" placeholder="First Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
-                <input type="text" placeholder="Last Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
-              </div>
-              <input type="email" placeholder="Email Address" style={{ padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
-              
-              <button style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, color: "white", padding: "18px", borderRadius: "12px", fontSize: "16px", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: `0 8px 24px ${PRIMARY}44`, transition: "all 0.3s", marginTop: "12px" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 32px ${PRIMARY}55`; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px ${PRIMARY}44`; }}>
-                Submit Request
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* ─── 5. SERVICES SECTION ───────────────────────────────── */}
       <section style={{ background: "linear-gradient(to bottom, #f4f8fb 0%, white 120px, white 100%)", padding: "100px 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
@@ -354,7 +312,7 @@ export default function Home() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "22px" }}>
             {services.map((svc) => (
-              <div key={svc.title} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "18px", padding: "32px 24px", display: "flex", flexDirection: "column", transition: "all 0.3s" }}
+              <div key={svc.title} style={{ background: "white", border: "1.5px solid #dde8f0", borderRadius: "18px", padding: "32px 24px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", transition: "all 0.3s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = PRIMARY; (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 40px ${PRIMARY}1a`; (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#dde8f0"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
                 <div style={{ width: "52px", height: "52px", background: `${PRIMARY}12`, borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "26px", marginBottom: "18px" }}>{svc.icon}</div>
@@ -521,53 +479,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 10. CONTACT BANNER ────────────────────────────────── */}
-      <section id="contact" style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, padding: "80px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "40px" }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "12px" }}>
-              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.14)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/contact/support.svg" alt="Support" style={{ width: "28px", height: "28px", objectFit: "contain", display: "block" }} />
-              </div>
-              <h2 style={{ fontSize: "32px", fontWeight: 900, color: "white", letterSpacing: "-0.02em" }}>
-                Need more details?
+      {/* ─── 10. QUICK LEAD FORM ───────────────────────────────── */}
+      <section id="quote" style={{ background: "linear-gradient(to bottom, white 0%, #f4f8fb 120px, #f4f8fb 100%)", padding: "100px 0" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ background: "white", borderRadius: "24px", padding: "48px", boxShadow: "0 20px 60px rgba(13,95,132,0.08)", border: "1px solid #e2ecf4" }}>
+            <div style={{ textAlign: "center", marginBottom: "36px" }}>
+              <h2 style={{ fontSize: "32px", fontWeight: 900, color: DARK, marginBottom: "12px", letterSpacing: "-0.02em" }}>
+                Get Your <span style={{ color: PRIMARY }}>Custom Quote</span>
               </h2>
+              <p style={{ color: "#5a7080", fontSize: "16px" }}>Secure peace of mind for your loved ones today.</p>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "18px" }}>
-              Our team is standing by to assist you.
-            </p>
-            <div style={{ display: "flex", gap: "24px", marginTop: "24px", flexWrap: "wrap" }}>
-              {contactItems.map((item) => (
-                <div key={item.text} style={{ color: "white", fontSize: "15px", display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.icon} alt={item.alt} style={{ width: "18px", height: "18px", objectFit: "contain", display: "block" }} />
-                  </div>
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <a href="mailto:info@safetyharbourinsurance.io" style={{ display: "inline-block", background: "white", color: PRIMARY, padding: "18px 42px", borderRadius: "50px", fontSize: "16px", fontWeight: 800, textDecoration: "none", boxShadow: `0 8px 30px rgba(0,0,0,0.15)`, transition: "all 0.3s" }}
-               onMouseEnter={e => { (e.target as HTMLElement).style.transform = "translateY(-2px)"; }}
-               onMouseLeave={e => { (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
-              Contact Us
-            </a>
+
+            <form style={{ display: "flex", flexDirection: "column", gap: "20px" }} onSubmit={e => e.preventDefault()}>
+              <div style={{ display: "flex", gap: "20px" }}>
+                <input type="text" placeholder="First Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
+                <input type="text" placeholder="Last Name" style={{ flex: 1, padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
+              </div>
+              <input type="email" placeholder="Email Address" style={{ padding: "16px 20px", borderRadius: "12px", border: "1px solid #dde8f0", fontSize: "15px", outline: "none", transition: "border 0.2s" }} onFocus={e => (e.target as HTMLInputElement).style.borderColor = PRIMARY} onBlur={e => (e.target as HTMLInputElement).style.borderColor = "#dde8f0"} />
+
+              <button style={{ background: `linear-gradient(135deg, ${PRIMARY}, #094a68)`, color: "white", padding: "18px", borderRadius: "12px", fontSize: "16px", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: `0 8px 24px ${PRIMARY}44`, transition: "all 0.3s", marginTop: "12px" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 32px ${PRIMARY}55`; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px ${PRIMARY}44`; }}>
+                Submit Request
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
       {/* ─── 11. FOOTER ────────────────────────────────────────── */}
-      <footer style={{ background: DARK, color: "white", padding: "80px 0 0" }}>
+      <footer style={{ background: PRIMARY, color: "white", padding: "80px 0 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1.4fr", gap: "60px", paddingBottom: "60px" }}>
 
             {/* Brand col */}
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/footer/logo.png" alt="Safety Harbour Insurance" style={{ height: "72px", marginBottom: "24px", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
+              <img src="/logo2.png" alt="Safety Harbour Insurance" style={{ height: "72px", width: "auto", marginBottom: "24px" }} />
               <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", lineHeight: 1.8, maxWidth: "340px" }}>
                 At Safety Harbour Insurance, we are dedicated to helping you protect what matters most. Our mission is to ensure your family&rsquo;s future is secure through personalized, expert insurance solutions.
               </p>
